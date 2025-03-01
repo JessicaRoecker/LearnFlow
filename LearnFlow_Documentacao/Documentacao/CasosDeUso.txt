@@ -56,14 +56,3 @@ O sistema recomenda materiais adicionais para estudo.
 
 As recomendações são exibidas ao usuário.
 
-Requisitos Funcionais
-
-O sistema deve permitir o upload de arquivos nos formatos PDF e texto.
-
-O sistema deve gerar resumos com base no conteúdo enviado.
-
-O sistema deve criar perguntas interativas personalizadas.
-
-O sistema deve avaliar respostas e fornecer feedback detalhado.
-
-O sistema deve recomendar materiais adicionais para estudo.
