@@ -1,0 +1,93 @@
+# Documentação Técnica da Aplicação 
+
+## Visão Geral
+A **Aplicação LearbFlow** é uma plataforma que utiliza tecnologias de inteligência artificial para otimizar o aprendizado de seus usuários. Ela processa documentos de texto e gera conteúdos como resumos, perguntas interativas e guias de estudo personalizados. Este documento descreve detalhadamente a arquitetura, funcionalidades, e tecnologias envolvidas no desenvolvimento da aplicação.
+
+## Arquitetura do Sistema
+A aplicação segue uma arquitetura modular baseada em serviços para garantir escalabilidade e manutenção facilitada.
+
+### Componentes Principais
+1. **Frontend**
+   - Desenvolvido com Blazor, CSS e JavaScript.
+   - Responsável pela interface do usuário e interações.
+   - Integração com APIs REST para comunicação com o backend.
+
+2. **Backend**
+   - Construído em **C#** utilizando o framework **.NET Core**.
+   - Responsável pelo processamento de dados, lógica de negócios e integração com a API do ChatGPT.
+
+3. **Mensageria**
+   - Utiliza o protocolo **MQTT** para comunicação assíncrona entre serviços e notificações em tempo real.
+
+4. **Banco de Dados**
+   - **SQL Server** ou **PostgreSQL** para armazenamento de dados estruturados.
+   - **Azure Blob Storage** para armazenamento de arquivos de usuários (PDFs e outros documentos).
+
+5. **Serviço de Processamento de IA**
+   - Integração com a **API do ChatGPT** para análise de linguagem natural.
+   - Módulo específico para geração de resumos e perguntas.
+
+## Fluxo de Funcionalidades
+
+### 1. Carregamento de Materiais
+- **Entrada**: Arquivos de estudo no formato PDF, texto ou outros formatos compatíveis.
+- **Processamento**:
+  - Extração de texto utilizando bibliotecas como **iTextSharp** (para PDFs).
+  - Armazenamento do arquivo no Azure Blob Storage.
+  - Indexação do texto no banco de dados para processamento posterior.
+
+### 2. Geração de Resumos
+- **Entrada**: Conteúdo textual extraído dos documentos.
+- **Processamento**:
+  - Chamada à API do ChatGPT para processamento de linguagem natural.
+  - Criação de um resumo conciso com base nos dados fornecidos.
+- **Saída**: Resumo em formato JSON enviado ao frontend.
+
+### 3. Criação de Perguntas Interativas
+- **Entrada**: Conteúdo textual relevante extraído do documento.
+- **Processamento**:
+  - Geração de perguntas utilizando algoritmos de inteligência artificial.
+  - Classificação das perguntas em múltipla escolha, verdadeiro/falso, entre outros formatos.
+- **Saída**: Perguntas interativas disponibilizadas no frontend.
+
+### 4. Avaliação das Respostas
+- **Entrada**: Respostas fornecidas pelo usuário.
+- **Processamento**:
+  - Verificação de correção das respostas com base no conteúdo processado.
+  - Gera feedback detalhado e explicações, quando aplicável.
+- **Saída**: Feedback enviado ao usuário com pontuação e dicas.
+
+### 5. Guia de Estudos Personalizado
+- **Entrada**: Histórico de aprendizado do usuário e conteúdo dos documentos.
+- **Processamento**:
+  - Análise de lacunas de conhecimento.
+  - Recomendação de materiais adicionais, como livros e artigos.
+- **Saída**: Lista de recomendações exibida no frontend.
+
+## Integrações
+
+### API do ChatGPT
+- **Finalidade**: Processamento de linguagem natural.
+- **Endpoints Utilizados**:
+  - `/resumir`: Para geração de resumos.
+  - `/gerar-perguntas`: Para criação de perguntas interativas.
+
+### Azure Services
+- **Blob Storage**: Armazenamento de arquivos.
+- **Cognitive Services**: Processamento adicional, como OCR (Reconhecimento Óptico de Caracteres).
+
+## Tecnologias Utilizadas
+- **Linguagem**: C#
+- **Framework**: .NET Core
+- **Banco de Dados**: SQL Server / PostgreSQL
+- **Mensageria**: MQTT
+- **Serviço de Nuvem**: Azure
+- **IA**: API do ChatGPT
+
+
+### Requisitos de Software
+- **SO**: Windows Server 
+- **.NET Core**: Versão 8.0
+- **Azure SDK**: Para integrações com Blob Storage e outros serviços.
+
+

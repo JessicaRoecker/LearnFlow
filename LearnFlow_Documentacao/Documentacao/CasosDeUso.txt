@@ -1,0 +1,69 @@
+Casos de Uso
+
+UC01 - Carregar Material de Estudo
+
+Ator Principal: UsuárioFluxo Principal:
+
+O usuário seleciona o arquivo (PDF ou texto) para upload.
+
+O sistema faz o upload do arquivo para o Azure Blob Storage.
+
+O texto é extraído e armazenado no banco de dados.
+
+O sistema confirma o sucesso do upload.
+
+Fluxo Alternativo:
+
+Se o formato do arquivo não for suportado, o sistema exibe uma mensagem de erro.
+
+UC02 - Gerar Resumo
+
+Ator Principal: UsuárioFluxo Principal:
+
+O usuário solicita o resumo do material carregado.
+
+O sistema processa o texto e gera um resumo através da API do ChatGPT.
+
+O resumo é exibido ao usuário.
+
+UC03 - Gerar Perguntas Interativas
+
+Ator Principal: UsuárioFluxo Principal:
+
+O usuário solicita a geração de perguntas.
+
+O sistema utiliza a API do ChatGPT para criar perguntas com base no conteúdo.
+
+As perguntas são exibidas ao usuário.
+
+UC04 - Avaliar Respostas
+
+Ator Principal: UsuárioFluxo Principal:
+
+O usuário responde às perguntas interativas.
+
+O sistema analisa as respostas e fornece feedback detalhado.
+
+O feedback é exibido ao usuário.
+
+UC05 - Recomendar Conteúdo Adicional
+
+Ator Principal: SistemaFluxo Principal:
+
+Com base no histórico do usuário, o sistema identifica lacunas de conhecimento.
+
+O sistema recomenda materiais adicionais para estudo.
+
+As recomendações são exibidas ao usuário.
+
+Requisitos Funcionais
+
+O sistema deve permitir o upload de arquivos nos formatos PDF e texto.
+
+O sistema deve gerar resumos com base no conteúdo enviado.
+
+O sistema deve criar perguntas interativas personalizadas.
+
+O sistema deve avaliar respostas e fornecer feedback detalhado.
+
+O sistema deve recomendar materiais adicionais para estudo.
