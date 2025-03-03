@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LearnFlow_API\LearnFlow_API.csproj" />
+  </ItemGroup>
+
 </Project>
