@@ -1,0 +1,63 @@
+﻿**requisitos funcionais** e **não funcionais** da  página de login:
+
+---
+
+### **Requisitos Funcionais**
+Estes requisitos descrevem as funcionalidades que a página de login deve oferecer:
+
+1. **Autenticação do Usuário**
+   - O sistema deve permitir que o usuário insira **nome de usuário/e-mail** e **senha** para fazer login.
+   - O sistema deve validar as credenciais fornecidas.
+
+2. **Esqueci minha senha**
+   - Deve haver um link que redirecione o usuário para a página de recuperação de senha.
+
+3. **Cadastro de Novo Usuário**
+   - O sistema deve incluir um botão ou link que leve à página de registro para novos usuários.
+
+4. **Mensagens de Erro**
+   - Exibir mensagens claras para credenciais inválidas, como: "Usuário ou senha incorretos".
+
+5. **Logout**
+   - Após o login, o usuário deve ser capaz de sair do sistema por meio de um botão de logout.
+
+6. **Redirecionamento**
+   - Após o login bem-sucedido, o sistema deve redirecionar o usuário para a página principal ou painel.
+
+7. **Manutenção de Sessão**
+   - O sistema deve permitir ao usuário optar por "Manter-me conectado".
+
+8. **Autenticação Multifatorial (opcional)**
+   - Caso configurado, o sistema deve exigir um código adicional enviado por e-mail ou SMS.
+
+---
+
+### **Requisitos Não Funcionais**
+Estes requisitos descrevem as características e restrições técnicas da página de login:
+
+1. **Desempenho**
+   - O tempo de resposta para autenticação não deve exceder **2 segundos** em condições normais.
+
+2. **Segurança**
+   - As senhas devem ser armazenadas usando algoritmos de hash seguros, como **bcrypt**.
+   - O sistema deve proteger contra ataques de força bruta, implementando bloqueio de conta temporário após **5 tentativas falhas**.
+   - A comunicação entre cliente e servidor deve ser criptografada usando **HTTPS**.
+
+3. **Compatibilidade**
+   - A página de login deve ser compatível com os navegadores mais usados (Chrome, Firefox, Safari, Edge).
+   - Deve ser responsiva para dispositivos móveis.
+
+4. **Escalabilidade**
+   - O sistema deve suportar até **10.000 logins simultâneos** sem degradação de desempenho.
+
+5. **Usabilidade**
+   - O design deve ser intuitivo e incluir placeholders nos campos de entrada.
+   - Deve exibir mensagens de erro amigáveis.
+
+6. **Internacionalização (opcional)**
+   - A página deve suportar múltiplos idiomas, conforme necessário.
+
+7. **Conformidade**
+   - Deve estar em conformidade com padrões de privacidade como **GDPR** ou **LGPD** (se aplicável).
+
+---

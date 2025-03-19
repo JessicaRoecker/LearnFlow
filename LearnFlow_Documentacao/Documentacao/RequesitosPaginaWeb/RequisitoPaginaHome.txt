@@ -1,0 +1,42 @@
+﻿Requisitos funcionais e não funcionais da sua página Home:
+
+---
+
+### **Requisitos Funcionais**
+1. **Upload de Arquivo PDF**
+   - O sistema deve permitir que o usuário selecione e envie **um único arquivo PDF** por vez.
+   - Após o envio, o botão ou campo de upload deve ser desativado até que o processamento seja concluído.
+
+2. **Processamento do PDF**
+   - Após o envio, o sistema deve encaminhar o PDF ao backend para geração do material de estudo.
+   - Exibir uma barra de progresso ou mensagem indicando o status do processamento (ex.: "Processando PDF...").
+
+3. **Texto Explicativo**
+   - Deve haver uma seção explicando:
+     - O que acontece após o envio.
+
+4. **Mensagens de Erro e Sucesso**
+   - Exibir mensagens claras:
+     - Sucesso: "Arquivo enviado e processado com sucesso!"
+     - Erro: "Erro ao processar o arquivo. Tente novamente."
+
+5. **Restrição de Arquivo**
+   - O sistema deve aceitar apenas um arquivo PDF por vez e deve recusar uploads de outros formatos ou múltiplos arquivos.
+
+6. **Exibição de Resultados**
+   - Após o processamento, exibir os resultados do material de estudo, redirecionando a página de Material de Estudo.
+
+---
+
+### **Requisitos Não Funcionais**
+1. **Desempenho**
+   - O tempo de processamento do PDF e geração do material de estudo não deve exceder **5 segundos** para um arquivo de até 10 páginas.
+
+2. **Segurança**
+   - Apenas o PDF enviado deve ser processado, com validação para evitar arquivos corrompidos ou maliciosos.
+
+3. **Usabilidade**
+   - O design deve garantir que o usuário entenda que é possível enviar apenas **um PDF por vez**.
+   - Após o envio, o botão deve mudar para um estado inativo com a mensagem "Processando...".
+
+---

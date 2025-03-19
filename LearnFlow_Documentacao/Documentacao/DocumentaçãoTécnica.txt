@@ -16,14 +16,11 @@ A aplicação segue uma arquitetura modular baseada em serviços para garantir esca
    - Construído em **C#** utilizando o framework **.NET Core**.
    - Responsável pelo processamento de dados, lógica de negócios e integração com a API do ChatGPT.
 
-3. **Mensageria**
-   - Utiliza o protocolo **MQTT** para comunicação assíncrona entre serviços e notificações em tempo real.
-
-4. **Banco de Dados**
+3. **Banco de Dados**
    - **SQL Server** ou **PostgreSQL** para armazenamento de dados estruturados.
    - **Azure Blob Storage** para armazenamento de arquivos de usuários (PDFs e outros documentos).
 
-5. **Serviço de Processamento de IA**
+4. **Serviço de Processamento de IA**
    - Integração com a **API do ChatGPT** para análise de linguagem natural.
    - Módulo específico para geração de resumos e perguntas.
 
@@ -80,7 +77,6 @@ A aplicação segue uma arquitetura modular baseada em serviços para garantir esca
 - **Linguagem**: C#
 - **Framework**: .NET Core
 - **Banco de Dados**: SQL Server / PostgreSQL
-- **Mensageria**: MQTT
 - **Serviço de Nuvem**: Azure
 - **IA**: API do ChatGPT
 
