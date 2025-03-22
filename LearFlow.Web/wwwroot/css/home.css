@@ -1,0 +1,109 @@
+﻿/* Estilo do corpo com gradiente */
+body {
+    margin: 0; /* Remover margens padrão */
+    padding: 0; /* Remover padding padrão */
+    min-height: 100vh; /* Garantir que cubra toda a altura da viewport */
+    background: linear-gradient(to bottom, #2c2c2c, #6a4db3, #ffffff); /* Gradiente suave com tons mais claros */
+}
+/* Define a altura do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Espaçamento do conteúdo principal abaixo do cabeçalho */
+.main-content {
+    margin-top: 120px; /* Ajuste conforme a altura do cabeçalho */
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+}
+
+/* Estilo para a barra de navegação */
+.navbar-brand, .navbar-toggler-icon, .nav-link {
+    color: white !important; /* Alterar a cor do texto para branco */
+}
+
+/* Estilo para o botão do menu */
+.navbar-toggler {
+    border-color: white; /* Coloca uma borda branca no botão do menu */
+}
+
+/* Estilo do contêiner de upload (PDF) */
+.pdf-upload-container {
+    width: 100%;
+    max-width: 300px;
+    padding: 40px;
+    border: 2px dashed #663399;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centralizar o conteúdo interno */
+    margin: 20px 0; /* Adicionar espaço entre a área de upload e o restante da página */
+}
+
+/* Estilo do texto explicativo */
+.upload-text {
+    font-size: 20px;
+    color: #FFFFF0;
+    font-weight: bold;
+    margin: 20px auto; /* Garantir que o texto tenha o mesmo espaçamento que o contêiner */
+    line-height: 1.5;
+    max-width: 400px;
+    text-align: center; /* Centralizar o texto */
+}
+
+/* Botões uniformes */
+.button-style {
+    display: inline-block;
+    width: 100%; /* Ocupar toda a largura disponível no contêiner */
+    max-width: 150px;
+    padding: 10px 20px; /* Ajuste o espaçamento interno */
+    font-size: 12px; /* Tamanho da fonte */
+    color: white;
+    background-color: #4B0082; /* Cor de fundo */
+    border: 2px solid #663399; /* Borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Espaçamento entre os botões */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Colocar os botões em uma coluna */
+    align-items: center; /* Centralizar os botões horizontalmente */
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Garantir que os botões fiquem abaixo do contêiner */
+}
+
+/* Estilo para quando o mouse passa sobre o botão */
+.button-style:hover {
+    background-color: #4caf50; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de zoom */
+}
+
+/* Ocultar o input de arquivo */
+#file-upload {
+    display: none;
+}
+
+/* Mensagem do arquivo */
+#file-info {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Rodapé mais estreito */
+}

@@ -1,0 +1,42 @@
+﻿@page "/Cadastro"
+@model LearFlow.Web.Pages.CadastroModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Learn Flow";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - LearFlow</title>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-container">
+            <h1>Cadastrar Novo Usuário</h1>
+            <form id="registerForm" action="/Cadastro" method="post">
+               
+                <input type="text" id="name" class="input-field" placeholder="Nome Completo" required />
+                <div id="nomeError" class="error-message"></div>
+                
+                <input type="text" id="email" class="input-field" placeholder="E-mail" required />
+                <div id="emailError" class="error-message"></div>
+
+                <input type="password" id="password" class="input-field" placeholder="Senha" required />
+                <div id="passwordError" class="error-message"></div>
+
+                <input type="password" id="confirmPassword" class="input-field" placeholder="Confirmar Senha" required />
+                <div id="passwordError" class="error-message"></div>
+
+                <button type="submit" class="btn" id="registerBtn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="~/js/cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@page "/Login"
+@model LoginModel
+@{
+    Layout = "_Layout";
+}
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>@ViewData["Title"]</h1>
+
+        <form id="loginForm" action="/Autenticacao" method="post">
+            <input type="email" id="email" name="email" class="input-field" placeholder="Email" required />
+            <div id="emailError" class="error-message"></div>
+
+            <input type="password" id="password" name="password" class="input-field" placeholder="Senha" required />
+            <div id="passwordError" class="error-message"></div>
+
+            <button type="submit" class="btn" id="loginBtn">Entrar</button>
+        </form>
+
+        <a href="/Login/ForgotPassword.cshtml" class="forgot-password">Esqueci a senha</a>
+        <a href="/Cadastro" class="cadastro-usuario">Realizar Cadastro</a>
+    </div>
+
+    <script src="/js/login.js"></script>
+
+</body>
+</html>

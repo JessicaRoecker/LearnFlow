@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+ 
+ @{
+    Layout = "_Layout";
+}
+@{
+    ViewData["Title"] = "Learn Flow";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/upload.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="upload-text-container">
+        <div class="upload-text">
+            <h1>Bem-vindo à LearFlow!</h1>
+            <p>Vamos começar a trabalhar com seus arquivos PDF.</p>
+        </div>
+    </div>
+    <div class="upload-container">
+        <input type="file" id="file-upload" name="file" accept=".pdf" />
+        <p id="file-info"></p>
+    </div>
+    <div>
+        <label for="file-upload" class="button-style">
+            <i class="fas fa-cloud-upload-alt"></i> Selecione seu PDF
+        </label>
+        <!-- Botão de envio -->
+        <button id="upload-button" class="button-style">Enviar PDF</button>
+    </div>
+
+   <script src="~/js/upload.js"></script>
+</body>
+</html>

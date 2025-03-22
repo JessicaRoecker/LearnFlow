@@ -1,42 +1,59 @@
+using LearnFlow_Service.DTOs;
+using Microsoft.OpenApi.Models;
 using Serilog;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-        builder.Services.AddControllers();
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-
-        builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
-
-        // Obter o caminho do diretório atual (pasta onde o programa está sendo executado)
+        // Configuração do Serilog
         var logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
-
-        // Verificar se a pasta Logs existe, caso contrário, criar
         if (!Directory.Exists(logDirectory))
         {
             Directory.CreateDirectory(logDirectory);
         }
 
-        // Configuração do Serilog
         Log.Logger = new LoggerConfiguration()
-            .WriteTo.Console() // Log no console
-            .WriteTo.File(Path.Combine(logDirectory, "log.txt"), rollingInterval: RollingInterval.Day) // Salvar os logs na pasta "Logs" dentro de Debug
+            .WriteTo.Console()
+            .WriteTo.File(Path.Combine(logDirectory, "log.txt"), rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
+        // Criação do builder e configuração do Serilog
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Configura o Serilog como o logger padrão
+        builder.Host.UseSerilog();
+
+        // Adiciona os serviços ao contêiner
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+
+        // Adiciona o Swagger
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+        });
+
+        // Injeção de dependência básica (exemplo)
+        builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
         var app = builder.Build();
 
-      
         // Configuração do pipeline HTTP
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger(); // Ativa o middleware do Swagger
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+            });
+        }
+        else
+        {
+            // Para produção, você pode configurar um handler para erros genéricos
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts(); // HSTS em produção
         }
 
         app.UseHttpsRedirection();

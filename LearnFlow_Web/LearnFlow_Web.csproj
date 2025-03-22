@@ -1,9 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\Controllers\HomeController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Layout\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazor.Bootstrap" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LearnFlow_DataContract\LearnFlow_DataContract.csproj" />
+  </ItemGroup>
 
 </Project>

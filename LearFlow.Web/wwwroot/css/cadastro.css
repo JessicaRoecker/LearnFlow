@@ -1,0 +1,73 @@
+﻿/* Estilos para a página de login */
+body {
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+    margin: 0; /* Remove margens padrão */
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+/* Estilo para o container do formulário */
+.registration-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+    /* Título */
+    .registration-container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+    }
+
+/* Estilo para os campos de input */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de submit */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Efeito de hover no botão */
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Estilo para as mensagens de erro ou sucesso */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: white;
+    display: none;
+}
+
+    .alert.success {
+        background-color: #28a745;
+    }
+
+    .alert.error {
+        background-color: #dc3545;
+    }

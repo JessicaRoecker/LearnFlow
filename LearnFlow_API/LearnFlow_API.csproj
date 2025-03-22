@@ -13,6 +13,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
 		<PackageReference Include="Serilog" Version="4.2.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
@@ -20,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <ProjectReference Include="..\LearnFlow_Service\LearnFlow_Service.csproj" />
-  </ItemGroup>
+	  <ProjectReference Include="..\LearnFlow_Servises\LearnFlow_Servises.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,23 +1,41 @@
 using LearnFlow_Web.Components;
+using Microsoft.AspNetCore.Cors;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+
+// Adicionar serviços ao contêiner
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddBlazorBootstrap();
+
+// Configuração de CORS para permitir o frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", policy =>
+    {
+        policy.WithOrigins("https://localhost:7018") // Permitir o frontend específico
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuração do pipeline HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    // Aplique HSTS em produção
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// Habilitar o CORS para o frontend específico
+app.UseCors("AllowSpecificOrigin");
 
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
